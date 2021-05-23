@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+description = 'User Management core services'
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    compileOnly 'org.projectlombok:lombok:1.18.16'
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
+
+    compile "org.springframework.boot:spring-boot-starter-security"
+
+    compile group: 'org.springframework.security', name: 'spring-security-core', version: '5.4.2'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-validation'
+
+    compile "org.springframework.boot:spring-boot-starter-security"
+
+}
+
+test {
+    useJUnitPlatform()
+}
