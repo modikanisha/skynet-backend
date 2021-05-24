@@ -89,13 +89,14 @@ allprojects {
 
 // Projects with Spring Boot app
 configure([
-        project(':user-service')
+        project(':employee-service')
 ]) {
 
     apply plugin: "org.springframework.boot"
 
     dependencies {
         runtime("io.micrometer:micrometer-registry-prometheus")
+        compileOnly "org.projectlombok:lombok:${lombok_version}"
         compile("net.logstash.logback:logstash-logback-encoder:${logstash_logback_encoder_version}")
     }
 

@@ -1,0 +1,45 @@
+server:
+  name: employeemgmt
+  port: 8080
+  address: 0.0.0.0
+  servlet:
+    context-path: /api/employee
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/kanisha
+    username: postgres
+    password: password
+  jpa:
+    hibernate.ddl-auto: update
+    hibernate.database: postgresql
+    hibernate.database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate.open-in-view: false
+    generate-ddl: true
+    show-sql: true
+
+#  jpa:
+#    hibernate.ddl-auto: update
+#    hibernate.database: postgresql
+#    hibernate.database-platform: org.hibernate.dialect.PostgreSQLDialect
+#    hibernate.open-in-view: false
+#    generate-ddl: true
+#    show-sql: true
+#  main:
+#    allow-bean-definition-overriding: true
+
+#swagger
+#api.version: 1.0
+#swagger.enabled: true
+#swagger.title: Employee Management Service
+#swagger.description: Exposes API's to be consumed by User Management
+#swagger.useDefaultResponseMessages: false
+#swagger.enableUrlTemplating: false
+#swagger.deepLinking: true
+#swagger.defaultModelsExpandDepth: -1
+#swagger.defaultModelExpandDepth: -1
+#swagger.displayOperationId: false
+#swagger.displayRequestDuration: false
+#swagger.filter: false
+#swagger.maxDisplayedTags: 0
+#swagger.showExtensions: false

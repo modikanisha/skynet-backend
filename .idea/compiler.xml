@@ -7,10 +7,12 @@
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.16/6dc192c7f93ec1853f70d59d8a6dcf94eb42866/lombok-1.18.16.jar" />
         </processorPath>
-        <module name="skynet-backend.user-service.test" />
-        <module name="skynet-backend.user-service.main" />
+        <module name="skynet-backend.employee-service.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="11" />
+    <bytecodeTargetLevel target="1.10">
+      <module name="skynet-backend.user-service.main" target="11" />
+      <module name="skynet-backend.user-service.test" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
