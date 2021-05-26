@@ -1,8 +1,7 @@
 package com.skynet.commons.models;
 
 import com.skynet.commons.constants.EntityConstants;
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -14,9 +13,9 @@ import static com.skynet.commons.constants.EntityConstants.ID;
 
 
 
-
-@AllArgsConstructor
-@Entity(name = Employee.ENTITY_NAME)
+@Data
+@Entity
+@Table(name = Employee.ENTITY_NAME)
 public class Employee implements Serializable{
 
     public static final String ENTITY_NAME = "employee";
@@ -80,4 +79,6 @@ public class Employee implements Serializable{
 
     @Column(name = EntityConstants.COLUMN_UPDATED_BY)
     private String updatedBy;
+
+
 }

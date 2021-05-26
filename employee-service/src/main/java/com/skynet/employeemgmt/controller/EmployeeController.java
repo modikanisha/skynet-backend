@@ -1,17 +1,26 @@
 package com.skynet.employeemgmt.controller;
 
 
-import com.skynet.employeemgmt.models.Employee;
+import com.skynet.commons.models.Employee;
+import com.skynet.commons.response.GenericResponse;
 import com.skynet.employeemgmt.service.EmployeeService;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@Slf4j
 @RequestMapping()
-@AllArgsConstructor
 public class EmployeeController {
-    private final EmployeeService employeeService;
+
+    @Autowired
+    EmployeeService employeeService;
 
 /*
     @GetMapping("/list")
@@ -20,8 +29,9 @@ public class EmployeeController {
             return ResponseEntity.ok(new GenericResponse(employeeService.getAllLetterAndResponseList(requestId,requestType, pageable)));
         }*/
     @PostMapping("/create")
-    public Employee create(@RequestBody final Employee employee) {
-       return employeeService.createEmployee(employee);
-      //  return ResponseEntity.ok(new GenericResponse(employeeService.createEmployee(employee)));
+    ResponseEntity<GenericResponse>  create(@RequestBody final Employee employee) {
+        GenericResponse genericResponse = new GenericResponse(employeeService.createEmployee(employee));
+        return ResponseEntity.ok(genericResponse);
     }
+
 }

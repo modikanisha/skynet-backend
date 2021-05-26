@@ -1,5 +1,5 @@
 rootProject.name = 'skynet-backend'
 include 'employee-service'
 include 'commons:commons'
-
+include 'client-service'
 

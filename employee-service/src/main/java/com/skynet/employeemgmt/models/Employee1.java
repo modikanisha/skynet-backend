@@ -1,19 +1,16 @@
 package com.skynet.employeemgmt.models;
 
 import lombok.AllArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Timestamp;
 
 //import static com.skynet.commons.constants.EntityConstants.ID;
 
 
 @AllArgsConstructor
-@Entity(name = Employee.ENTITY_NAME)
-public class Employee implements Serializable{
+@Entity(name = Employee1.ENTITY_NAME)
+public class Employee1 implements Serializable{
 
     public static final String ENTITY_NAME = "employee";
     public static final String EMPLOYEE_ID = "employee_id";
