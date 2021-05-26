@@ -1,14 +1,41 @@
 description = 'Commons'
 
 dependencies {
-    implementation 'org.projectlombok:lombok:1.18.18'
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.20'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    compile "org.springframework.cloud:spring-cloud-starter-openfeign"
+    compileOnly "javax.cache:cache-api"
+   // compile "com.hazelcast:hazelcast-spring"
+    compileOnly "org.springframework.boot:spring-boot-starter-cache"
+   // compileOnly group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb'
+    compileOnly "org.springframework.boot:spring-boot-starter-web"
+    compileOnly "net.logstash.logback:logstash-logback-encoder:${logstash_logback_encoder_version}"
+    compileOnly group: 'org.springframework.boot', name: 'spring-boot-starter-validation'
+    compileOnly group: 'org.springframework.boot', name: 'spring-boot-configuration-processor'
+   // testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb'
+    compile group: 'xyz.capybara', name: 'clamav-client', version: '2.0.2'
+
+//    testCompile "org.powermock:powermock-module-junit4:2.0.4"
+//    testCompile "org.powermock:powermock-api-mockito2:2.0.4"
+//    testCompile "org.mockito:mockito-core:2.18.3"
+
+
+    implementation group: 'javax.persistence', name: 'javax.persistence-api', version: '2.2'
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+   // compile "joda-time:joda-time:2.9.9"
     compile "javax.validation:validation-api:2.0.0.Final"
-
+    compile "org.springframework.boot:spring-boot-configuration-processor"
     compile "org.springframework.boot:spring-boot-starter-web"
-
     compile "org.springframework.boot:spring-boot-starter-security"
+
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.3.8.RELEASE'
-    runtime('org.postgresql:postgresql:42.1.4')
+
     // JPA
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
