@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/commons" />
             <option value="$PROJECT_DIR$/commons/commons" />
             <option value="$PROJECT_DIR$/employee-service" />
+            <option value="$PROJECT_DIR$/initial-data-service" />
           </set>
         </option>
       </GradleProjectSettings>

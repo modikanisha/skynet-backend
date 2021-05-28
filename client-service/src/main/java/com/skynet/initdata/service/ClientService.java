@@ -1,7 +1,7 @@
-package com.skynet.clientmgmt.service;
+package com.skynet.initdata.service;
 
 
-import com.skynet.clientmgmt.models.Client;
+import com.skynet.initdata.models.Client;
 
 import java.util.List;
 

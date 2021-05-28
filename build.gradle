@@ -90,7 +90,8 @@ allprojects {
 // Projects with Spring Boot app
 configure([
         project(':employee-service'),
-        project(':client-service')
+        project(':client-service').
+       project(':initial-data-service'),
 ]) {
 
     apply plugin: "org.springframework.boot"

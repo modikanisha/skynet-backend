@@ -1,6 +1,3 @@
-com/skynet/commons/response/CommonMessageTemplateResponse.java
- com.skynet.commons.response.CommonMessageTemplateResponse
- com.skynet.commons.response.CommonMessageTemplateResponse$CommonMessageTemplateResponseBuilder
 com/skynet/commons/constants/EntityConstants.java
  com.skynet.commons.constants.EntityConstants
 com/skynet/commons/models/Employee.java

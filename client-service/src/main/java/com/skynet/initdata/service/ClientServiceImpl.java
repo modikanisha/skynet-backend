@@ -1,10 +1,8 @@
-package com.skynet.clientmgmt.service;
+package com.skynet.initdata.service;
 
-import com.skynet.clientmgmt.models.Client;
-import com.skynet.clientmgmt.repository.ClientRepository;
+import com.skynet.initdata.models.Client;
+import com.skynet.initdata.repository.ClientRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
