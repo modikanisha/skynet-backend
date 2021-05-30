@@ -4,7 +4,7 @@ import lombok.Data;
 
 import java.util.List;
 
-@Data
+//@Data
 public class SkyNetException extends RuntimeException {
 
     private int errorCode;

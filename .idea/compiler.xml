@@ -24,9 +24,6 @@
         <module name="skynet-backend.initial-data-service.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.10">
-      <module name="skynet-backend.user-service.main" target="11" />
-      <module name="skynet-backend.user-service.test" target="11" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.10" />
   </component>
 </project>

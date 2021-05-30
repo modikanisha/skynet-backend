@@ -2,6 +2,8 @@
 /.gradle/
 /user-service/build/
 /user-service/build/classes/java/main/
+/employee-service/build/libs/employee-service-1.0-SNAPSHOT.jar
+.idea/compiler.xml
 
 *.log
 *.log.json
@@ -75,3 +77,4 @@ release.properties
 
 application-local.yml
 
+/client-service/build/
