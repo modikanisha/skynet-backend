@@ -4,6 +4,8 @@ import com.skynet.commons.models.Employee;
 import com.skynet.employeemgmt.repository.EmployeeRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @AllArgsConstructor
@@ -19,5 +21,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         employee.setStatusId("1");
         employeeRepository.save(employee);
         return employee;
+    }
+
+    @Override
+    public Page<Employee> list(Pageable pageable) {
+     return  employeeRepository.findAll(pageable);
     }
 }

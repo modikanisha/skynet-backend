@@ -23,12 +23,16 @@ public class Employee implements Serializable{
     public static final String NAME = "name";
     public static final String USER_NAME = "user_name";
     public static final String PASS_CODE = "pass_code";
-    public static final String ROLE_ID = "role_id";
-    public static final String STATUS_ID = "status_id";
-    public static final String CONTACT_NO = "contact_no";
+    public static final String ROLE = "role";
+    public static final String STATUS = "status";
+    public static final String CONTACT_NUMBER = "contact_number";
     public static final String EMAIL_ID = "email_id";
     public static final String ADDRESS = "address";
     public static final String DESCRIPTION = "description";
+    public static final String LAST_LOGGED_ID = "last_logged_id";
+    public static final String ACCESS_START_DATE = "access_start_date";
+    public static final String ACCESS_END_DATE = "access_end_date";
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = ID)
@@ -47,15 +51,15 @@ public class Employee implements Serializable{
     private String passCode;
 
     //TODO
-    @Column(name = ROLE_ID)
-    private String roleId;
+    @Column(name = ROLE)
+    private String role;
 
     //TODO
-    @Column(name = STATUS_ID)
-    private String statusId;
+    @Column(name = STATUS)
+    private String status;
 
-    @Column(name = CONTACT_NO)
-    private String contactNo;
+    @Column(name = CONTACT_NUMBER)
+    private String contactNumber;
 
     @Column(name = EMAIL_ID)
     private String emailId;
@@ -65,6 +69,16 @@ public class Employee implements Serializable{
 
     @Column(name = DESCRIPTION)
     private String description;
+
+    @Column(name=LAST_LOGGED_ID)
+    @CreationTimestamp
+    private Timestamp lastLoggedIn;
+
+    @Column(name=ACCESS_START_DATE)
+    private Timestamp accessStartDate;
+
+    @Column(name=ACCESS_END_DATE)
+    private Timestamp accessEndDate;
 
     @Column(name = EntityConstants.COLUMN_CREATED_AT)
     @CreationTimestamp
