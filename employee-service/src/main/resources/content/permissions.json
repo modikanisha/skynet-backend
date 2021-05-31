@@ -1,0 +1,26 @@
+[
+  {
+    "moduleKey": "EMPLOYEE_DISPLAY_PAGE",
+    "moduleName": "Employee - Display page",
+    "create": false,
+    "update": false,
+    "read": false,
+    "delete": false
+  },
+  {
+    "moduleKey": "CLIENT_DISPLAY_PAGE",
+    "moduleName": "CLIENT - Display page",
+    "create": false,
+    "update": false,
+    "read": false,
+    "delete": false
+  },
+  {
+    "moduleKey": "ROLE_DISPLAY_PAGE",
+    "moduleName": "Role - Display page",
+    "create": false,
+    "update": false,
+    "read": false,
+    "delete": false
+  }
+]
