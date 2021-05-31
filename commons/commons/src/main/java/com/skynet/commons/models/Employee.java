@@ -10,7 +10,7 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 
 import static com.skynet.commons.constants.EntityConstants.ID;
-
+import static com.skynet.commons.constants.EntityConstants.STATUS;
 
 
 @Data
@@ -24,7 +24,6 @@ public class Employee implements Serializable{
     public static final String USER_NAME = "user_name";
     public static final String PASS_CODE = "pass_code";
     public static final String ROLE = "role";
-    public static final String STATUS = "status";
     public static final String CONTACT_NUMBER = "contact_number";
     public static final String EMAIL_ID = "email_id";
     public static final String ADDRESS = "address";
