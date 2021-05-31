@@ -78,3 +78,6 @@ release.properties
 application-local.yml
 
 /client-service/build/
+/commons/build/
+/employee-service/build/
+/commons/commons/build/

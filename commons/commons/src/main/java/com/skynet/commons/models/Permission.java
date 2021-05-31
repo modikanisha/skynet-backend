@@ -1,7 +1,8 @@
 package com.skynet.commons.models;
 
 import com.skynet.commons.constants.EntityConstants;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -9,27 +10,27 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
-import static com.skynet.commons.constants.EntityConstants.ID;
 import static com.skynet.commons.constants.EntityConstants.STATUS;
 
-
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = Permission.ENTITY_NAME)
-public class Permission implements Serializable{
+public class Permission implements Serializable {
 
+    public static final String PERMISSION_SEQ_ID = "permission_seq_id";
     public static final String ENTITY_NAME = "permission";
     public static final String MODULE_KEY = "module_key";
     public static final String MODULE_NAME = "module_name";
-    public static final String READ = "read";
-    public static final String CREATE = "create";
-    public static final String UPDATE = "update";
-    public static final String DELETE = "delete";
+    public static final String READ_FG = "read_fg";
+    public static final String CREATE_FG = "create_fg";
+    public static final String UPDATE_FG = "update_fg";
+    public static final String DELETE_FG = "delete_fg";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = ID)
-    private Integer id;
+    @Column(name = PERMISSION_SEQ_ID)
+    private Integer permissionSeqId;
 
     @Column(name = MODULE_KEY)
     private String moduleKey;
@@ -37,20 +38,22 @@ public class Permission implements Serializable{
     @Column(name = MODULE_NAME)
     private String moduleName;
 
-    @Column(name = CREATE)
+    @Column(name = CREATE_FG)
     private boolean create;
 
-    @Column(name = UPDATE)
+    @Column(name = UPDATE_FG)
     private boolean update;
 
-    @Column(name = READ)
+    @Column(name = READ_FG)
     private boolean read;
 
-    @Column(name = DELETE)
+    @Column(name = DELETE_FG)
     private boolean delete;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = Role.ROLE_SEQ_ID)
+    private Role role;
 
-    //TODO
     @Column(name = STATUS)
     private String status;
 

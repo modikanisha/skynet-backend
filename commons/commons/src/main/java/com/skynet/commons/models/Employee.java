@@ -18,6 +18,7 @@ import static com.skynet.commons.constants.EntityConstants.STATUS;
 @Table(name = Employee.ENTITY_NAME)
 public class Employee implements Serializable{
 
+    public static final String EMPLOYEE_SEQ_ID = "id";
     public static final String ENTITY_NAME = "employee";
     public static final String EMPLOYEE_ID = "employee_id";
     public static final String NAME = "name";
@@ -34,7 +35,7 @@ public class Employee implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = ID)
+    @Column(name = EMPLOYEE_SEQ_ID)
     private Integer id;
 
     @Column(name = EMPLOYEE_ID,length = 100)
@@ -53,7 +54,6 @@ public class Employee implements Serializable{
     @Column(name = ROLE)
     private String role;
 
-    //TODO
     @Column(name = STATUS)
     private String status;
 

@@ -27,7 +27,7 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-security"
     compile "com.fasterxml.jackson.core:jackson-databind:2.11.0"
     compile "com.fasterxml.jackson.core:jackson-core:2.12.3"
-
+    implementation 'javax.xml.bind:jaxb-api:2.3.0'
 
     compile project(':commons:commons')
 

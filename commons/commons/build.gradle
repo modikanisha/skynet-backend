@@ -33,7 +33,7 @@ dependencies {
     compile "org.springframework.boot:spring-boot-configuration-processor"
     compile "org.springframework.boot:spring-boot-starter-web"
     compile "org.springframework.boot:spring-boot-starter-security"
-
+    implementation 'javax.xml.bind:jaxb-api:2.3.0'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.3.8.RELEASE'
 
     // JPA
