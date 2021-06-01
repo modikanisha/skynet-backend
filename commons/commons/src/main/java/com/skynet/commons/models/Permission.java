@@ -53,21 +53,4 @@ public class Permission implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = Role.ROLE_SEQ_ID)
     private Role role;
-
-    @Column(name = STATUS)
-    private String status;
-
-    @Column(name = EntityConstants.COLUMN_CREATED_AT)
-    @CreationTimestamp
-    private Timestamp createdAt;
-
-    @Column(name = EntityConstants.COLUMN_CREATED_BY)
-    private String createdBy;
-
-    @Column(name = EntityConstants.COLUMN_UPDATED_AT)
-    @UpdateTimestamp
-    private Timestamp updatedAt;
-
-    @Column(name = EntityConstants.COLUMN_UPDATED_BY)
-    private String updatedBy;
 }

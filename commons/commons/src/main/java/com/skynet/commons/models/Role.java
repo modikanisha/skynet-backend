@@ -17,7 +17,7 @@ import static com.skynet.commons.constants.EntityConstants.STATUS;
 @Setter
 @Entity
 @Table(name = Role.ENTITY_NAME)
-public class Role implements Serializable{
+public class Role implements Serializable {
 
     public static final String ROLE_SEQ_ID = "role_seq_id";
     public static final String ENTITY_NAME = "role";
@@ -49,15 +49,20 @@ public class Role implements Serializable{
 
     @Column(name = EntityConstants.COLUMN_CREATED_AT)
     @CreationTimestamp
-    private Timestamp createdAt;
+    private Timestamp createdAtDate;
 
     @Column(name = EntityConstants.COLUMN_CREATED_BY)
     private String createdBy;
 
     @Column(name = EntityConstants.COLUMN_UPDATED_AT)
     @UpdateTimestamp
-    private Timestamp updatedAt;
+    private Timestamp updatedAtDate;
 
     @Column(name = EntityConstants.COLUMN_UPDATED_BY)
     private String updatedBy;
+    @Transient
+    private Long createdAt;
+    @Transient
+    private Long updatedAt;
+
 }

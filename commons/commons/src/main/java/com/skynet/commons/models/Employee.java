@@ -16,7 +16,7 @@ import static com.skynet.commons.constants.EntityConstants.STATUS;
 @Data
 @Entity
 @Table(name = Employee.ENTITY_NAME)
-public class Employee implements Serializable{
+public class Employee implements Serializable {
 
     public static final String EMPLOYEE_SEQ_ID = "id";
     public static final String ENTITY_NAME = "employee";
@@ -38,7 +38,7 @@ public class Employee implements Serializable{
     @Column(name = EMPLOYEE_SEQ_ID)
     private Integer id;
 
-    @Column(name = EMPLOYEE_ID,length = 100)
+    @Column(name = EMPLOYEE_ID, length = 100)
     private String employeeId;
 
     @Column(name = NAME)
@@ -69,29 +69,31 @@ public class Employee implements Serializable{
     @Column(name = DESCRIPTION)
     private String description;
 
-    @Column(name=LAST_LOGGED_ID)
+    @Column(name = LAST_LOGGED_ID)
     @CreationTimestamp
     private Timestamp lastLoggedIn;
 
-    @Column(name=ACCESS_START_DATE)
+    @Column(name = ACCESS_START_DATE)
     private Timestamp accessStartDate;
 
-    @Column(name=ACCESS_END_DATE)
+    @Column(name = ACCESS_END_DATE)
     private Timestamp accessEndDate;
 
     @Column(name = EntityConstants.COLUMN_CREATED_AT)
     @CreationTimestamp
-    private Timestamp createdAt;
+    private Timestamp createdAtDate;
 
     @Column(name = EntityConstants.COLUMN_CREATED_BY)
     private String createdBy;
 
     @Column(name = EntityConstants.COLUMN_UPDATED_AT)
     @UpdateTimestamp
-    private Timestamp updatedAt;
+    private Timestamp updatedAtDate;
 
     @Column(name = EntityConstants.COLUMN_UPDATED_BY)
     private String updatedBy;
-
-
+    @Transient
+    private Long createdAt;
+    @Transient
+    private Long updatedAt;
 }
