@@ -1,7 +1,7 @@
 package com.skynet.commons.models;
 
 import com.skynet.commons.constants.EntityConstants;
-import lombok.*;
+import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -9,7 +9,6 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
-import static com.skynet.commons.constants.EntityConstants.ID;
 import static com.skynet.commons.constants.EntityConstants.STATUS;
 
 
@@ -30,13 +29,11 @@ public class Employee implements Serializable {
     public static final String ADDRESS = "address";
     public static final String DESCRIPTION = "description";
     public static final String LAST_LOGGED_ID = "last_logged_id";
-    public static final String ACCESS_START_DATE = "access_start_date";
-    public static final String ACCESS_END_DATE = "access_end_date";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = EMPLOYEE_SEQ_ID)
-    private Integer id;
+    private Integer employeeSeqId;
 
     @Column(name = EMPLOYEE_ID, length = 100)
     private String employeeId;
@@ -72,12 +69,6 @@ public class Employee implements Serializable {
     @Column(name = LAST_LOGGED_ID)
     @CreationTimestamp
     private Timestamp lastLoggedIn;
-
-    @Column(name = ACCESS_START_DATE)
-    private Timestamp accessStartDate;
-
-    @Column(name = ACCESS_END_DATE)
-    private Timestamp accessEndDate;
 
     @Column(name = EntityConstants.COLUMN_CREATED_AT)
     @CreationTimestamp
