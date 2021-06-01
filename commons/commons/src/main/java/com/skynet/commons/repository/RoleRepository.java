@@ -8,5 +8,7 @@ import java.util.List;
 
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Integer> {
-    List<Role> findAllByStatus(String name);
+    List<Role> findAllByOrderByUpdatedAtDateDesc();
+
+    Role findByRoleSeqId(Integer roleSeqId);
 }

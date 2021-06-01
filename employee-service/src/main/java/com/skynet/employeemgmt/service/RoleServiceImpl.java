@@ -1,26 +1,25 @@
 package com.skynet.employeemgmt.service;
 
-import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.skynet.commons.models.Employee;
+import com.skynet.commons.constants.ErrorConstants;
+import com.skynet.commons.exceptionHandlers.SkyNetException;
 import com.skynet.commons.models.Permission;
 import com.skynet.commons.models.Role;
 import com.skynet.commons.repository.RoleRepository;
 import com.skynet.employeemgmt.dto.response.SettingCommonListResponse;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Set;
 
-import static com.skynet.commons.enums.Status.ACTIVE;
+import static com.skynet.commons.enums.Status.*;
 import static com.skynet.commons.utils.jsonParseUtil.getJsonString;
+
 
 @AllArgsConstructor
 @Service
@@ -44,11 +43,32 @@ public class RoleServiceImpl implements RoleService {
             e.printStackTrace();
         }
         roleRepository.save(role);
+        role.setCreatedAt(role.getCreatedAtDate().getTime());
+        role.setUpdatedAt(role.getUpdatedAtDate().getTime());
         return role;
     }
+
+    @Override
+    public Role updateRole(Role role) {
+        Role dbRole = roleRepository.findByRoleSeqId(role.getRoleSeqId());
+        if(dbRole == null)
+        throw new SkyNetException(ErrorConstants.ErrorCode.ROLE_ERROR,ErrorConstants.SubErrorCode.ROLE_ID_NOT_FOUND,ErrorConstants.ErrorMessage.ROLE_ID_NOT_FOUND);
+
+        BeanUtils.copyProperties(role, dbRole);
+
+        dbRole.setStatus(getStatus(role.getStatus()) != null ? getStatus(role.getStatus()).getName() : INACTIVE.getName());
+        dbRole.setUpdatedAtDate(new Timestamp(System.currentTimeMillis()));
+
+        roleRepository.save(dbRole);
+        dbRole.setCreatedAt(role.getCreatedAtDate().getTime());
+        dbRole.setUpdatedAt(role.getUpdatedAtDate().getTime());
+        dbRole.getPermission().stream();
+        return dbRole;
+    }
+
     @Override
     public SettingCommonListResponse list() {
-       List<Role> roles = roleRepository.findAllByStatus(ACTIVE.getName());
+       List<Role> roles = roleRepository.findAllByOrderByUpdatedAtDateDesc();
         SettingCommonListResponse settingCommonListResponse = new SettingCommonListResponse();
 
         SettingCommonListResponse.MainTableConfigs  mainTableConfigs = new SettingCommonListResponse.MainTableConfigs();
@@ -93,6 +113,7 @@ public class RoleServiceImpl implements RoleService {
                 }
                 role.setCreatedAt(role.getCreatedAtDate().getTime());
                 role.setUpdatedAt(role.getUpdatedAtDate().getTime());
+                role.getPermission().stream();
             }
         }
         settingCommonListResponse.setRecords(roles);

@@ -17,9 +17,15 @@ public class RoleController {
 
     private final RoleService roleService;
 
-    @PostMapping("/create")
+    @PostMapping()
     ResponseEntity<GenericResponse> create(@RequestBody final Role role) {
         GenericResponse genericResponse = new GenericResponse(roleService.createRole(role));
+        return ResponseEntity.ok(genericResponse);
+    }
+
+    @PatchMapping()
+    ResponseEntity<GenericResponse> update(@RequestBody final Role role) {
+        GenericResponse genericResponse = new GenericResponse(roleService.updateRole(role));
         return ResponseEntity.ok(genericResponse);
     }
 

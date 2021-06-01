@@ -3,8 +3,8 @@ package com.skynet.commons.enums;
 import java.util.Arrays;
 
 public enum Status {
-    ACTIVE("Active"),
-    DEACTIVATE("Deactivate");
+    ACTIVE("active"),
+    INACTIVE("inactive");
 
     private String name;
 
@@ -16,7 +16,7 @@ public enum Status {
         return name;
     }
 
-    public Status getStatus(String name) {
+    public static Status getStatus(String name) {
         return Arrays.stream(values())
                 .filter(value -> value.getName().equalsIgnoreCase(name))
                 .findAny().orElse(null);

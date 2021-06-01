@@ -6,6 +6,7 @@ import com.skynet.employeemgmt.dto.response.SettingCommonListResponse;
 public interface RoleService {
 
     Role createRole(Role role);
+    Role updateRole(Role role);
     SettingCommonListResponse list();
 
 }
