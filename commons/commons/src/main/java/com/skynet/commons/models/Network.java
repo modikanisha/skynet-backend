@@ -40,9 +40,12 @@ public class Network implements Serializable {
     @Column(name = EMAIL_ID)
     private String emailId;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name=Address.COLUMN_ADDRESS_ID)
-    private Address address;
+    private Address addressId;
+
+    @Transient
+    private String address;
 
     @Column(name = EntityConstants.COLUMN_CREATED_AT)
     @CreationTimestamp

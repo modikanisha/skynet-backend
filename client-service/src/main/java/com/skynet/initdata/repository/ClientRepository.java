@@ -1,6 +1,6 @@
 package com.skynet.initdata.repository;
 
-import com.skynet.initdata.models.Client;
+import com.skynet.commons.models.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

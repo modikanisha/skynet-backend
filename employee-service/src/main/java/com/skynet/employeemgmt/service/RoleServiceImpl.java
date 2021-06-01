@@ -79,7 +79,7 @@ public class RoleServiceImpl implements RoleService {
         mainTableConfigs.setBooleanColumns(new String[]{});
 
         SettingCommonListResponse.Title mainTableTitle = new SettingCommonListResponse.Title();
-        mainTableTitle.setRoleName("Role Name");
+        mainTableTitle.setName("Role Name");
         mainTableTitle.setDescription("Description");
         mainTableTitle.setStatus("Status");
         mainTableTitle.setCreatedAt("Created At");

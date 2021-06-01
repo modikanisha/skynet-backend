@@ -1,7 +1,7 @@
 package com.skynet.initdata.service;
 
 
-import com.skynet.initdata.models.Client;
+import com.skynet.commons.models.Client;
 
 import java.util.List;
 

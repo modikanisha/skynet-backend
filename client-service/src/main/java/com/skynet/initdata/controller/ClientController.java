@@ -1,6 +1,6 @@
 package com.skynet.initdata.controller;
 
-import com.skynet.initdata.models.Client;
+import com.skynet.commons.models.Client;
 import com.skynet.initdata.service.ClientService;
 import com.skynet.commons.response.GenericResponse;
 import lombok.AllArgsConstructor;

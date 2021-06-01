@@ -1,4 +1,4 @@
-package com.skynet.initdata.models;
+package com.skynet.commons.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
