@@ -1,4 +1,4 @@
-package com.skynet.initdata.dto.request;
+package com.skynet.clientmgmt.dto.request;
 
 import lombok.Data;
 

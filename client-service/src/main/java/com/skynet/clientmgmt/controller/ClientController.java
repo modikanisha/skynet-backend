@@ -1,7 +1,7 @@
-package com.skynet.initdata.controller;
+package com.skynet.clientmgmt.controller;
 
+import com.skynet.clientmgmt.service.ClientService;
 import com.skynet.commons.models.Client;
-import com.skynet.initdata.service.ClientService;
 import com.skynet.commons.response.GenericResponse;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

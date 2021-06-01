@@ -1,4 +1,4 @@
-package com.skynet.initdata;
+package com.skynet.clientmgmt;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

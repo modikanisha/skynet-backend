@@ -81,3 +81,4 @@ application-local.yml
 /commons/build/
 /employee-service/build/
 /commons/commons/build/
+/initial-data-service/build/

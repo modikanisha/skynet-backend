@@ -1,4 +1,4 @@
-package com.skynet.initdata.repository;
+package com.skynet.clientmgmt.repository;
 
 import com.skynet.commons.models.Client;
 import org.springframework.data.jpa.repository.JpaRepository;

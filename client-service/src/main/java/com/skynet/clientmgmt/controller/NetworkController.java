@@ -1,10 +1,10 @@
-package com.skynet.initdata.controller;
+package com.skynet.clientmgmt.controller;
 
 
-import com.skynet.initdata.dto.request.NetworkAddRequest;
+import com.skynet.clientmgmt.dto.request.NetworkAddRequest;
+import com.skynet.clientmgmt.service.NetworkService;
 import com.skynet.commons.models.Network;
 import com.skynet.commons.response.GenericResponse;
-import com.skynet.initdata.service.NetworkService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,7 +1,7 @@
-package com.skynet.initdata.service;
+package com.skynet.clientmgmt.service;
 
+import com.skynet.clientmgmt.repository.ClientRepository;
 import com.skynet.commons.models.Client;
-import com.skynet.initdata.repository.ClientRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

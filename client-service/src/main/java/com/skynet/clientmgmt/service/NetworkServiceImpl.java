@@ -1,6 +1,6 @@
-package com.skynet.initdata.service;
+package com.skynet.clientmgmt.service;
 
-import com.skynet.initdata.dto.request.NetworkAddRequest;
+import com.skynet.clientmgmt.dto.request.NetworkAddRequest;
 import com.skynet.commons.constants.ErrorConstants;
 import com.skynet.commons.dto.response.SettingCommonListResponse;
 import com.skynet.commons.exceptionHandlers.SkyNetException;

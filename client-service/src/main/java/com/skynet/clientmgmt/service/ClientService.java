@@ -1,4 +1,4 @@
-package com.skynet.initdata.service;
+package com.skynet.clientmgmt.service;
 
 
 import com.skynet.commons.models.Client;
