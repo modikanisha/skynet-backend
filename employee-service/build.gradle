@@ -30,6 +30,7 @@ dependencies {
     implementation 'javax.xml.bind:jaxb-api:2.3.0'
 
     compile project(':commons:commons')
+    compile project(':commons:jwt-filter')
 
     // JPA
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'

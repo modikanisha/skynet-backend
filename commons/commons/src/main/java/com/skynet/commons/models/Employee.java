@@ -8,6 +8,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.skynet.commons.constants.EntityConstants.STATUS;
 
@@ -29,7 +31,6 @@ public class Employee implements Serializable {
     public static final String ADDRESS = "address";
     public static final String DESCRIPTION = "description";
     public static final String LAST_LOGGED_ID = "last_logged_id";
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = EMPLOYEE_SEQ_ID)
@@ -46,10 +47,6 @@ public class Employee implements Serializable {
 
     @Column(name = PASS_CODE)
     private String passCode;
-
-    //TODO
-    @Column(name = ROLE)
-    private String role;
 
     @Column(name = STATUS)
     private String status;
@@ -69,6 +66,10 @@ public class Employee implements Serializable {
     @Column(name = LAST_LOGGED_ID)
     @CreationTimestamp
     private Timestamp lastLoggedIn;
+
+    @OneToOne
+    @JoinColumn(name = ROLE)
+    private Role role;
 
     @Column(name = EntityConstants.COLUMN_CREATED_AT)
     @CreationTimestamp

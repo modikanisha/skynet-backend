@@ -24,10 +24,14 @@ public class EmployeeController {
         return ResponseEntity.ok(new GenericResponse(employeeService.list(pageable)));
     }
 
-    @PostMapping("/create")
+    @PostMapping("/")
     ResponseEntity<GenericResponse> create(@RequestBody final Employee employee) {
         GenericResponse genericResponse = new GenericResponse(employeeService.createEmployee(employee));
         return ResponseEntity.ok(genericResponse);
     }
-
+    @PatchMapping("/")
+    ResponseEntity<GenericResponse> update(@RequestBody final Employee employee) {
+        GenericResponse genericResponse = new GenericResponse(employeeService.updateEmployee(employee));
+        return ResponseEntity.ok(genericResponse);
+    }
 }

@@ -60,8 +60,8 @@ public class RoleServiceImpl implements RoleService {
         dbRole.setUpdatedAtDate(new Timestamp(System.currentTimeMillis()));
 
         roleRepository.save(dbRole);
-        dbRole.setCreatedAt(role.getCreatedAtDate().getTime());
-        dbRole.setUpdatedAt(role.getUpdatedAtDate().getTime());
+        dbRole.setCreatedAt(dbRole.getCreatedAtDate().getTime());
+        dbRole.setUpdatedAt(dbRole.getUpdatedAtDate().getTime());
         dbRole.getPermission().stream();
         return dbRole;
     }

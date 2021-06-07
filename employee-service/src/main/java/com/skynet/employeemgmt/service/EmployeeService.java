@@ -8,4 +8,6 @@ public interface EmployeeService {
     Employee createEmployee(Employee employee);
 
     Page<Employee> list(Pageable pageable);
+
+    Employee updateEmployee(Employee employee);
 }

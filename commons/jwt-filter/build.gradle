@@ -1,0 +1,18 @@
+description = 'JWT Filter'
+
+dependencies {
+    implementation 'org.projectlombok:lombok:1.18.18'
+    compile project(':commons:commons')
+    compile('org.springframework.security:spring-security-config')
+    compile('org.springframework.security:spring-security-web')
+    compile "org.apache.commons:commons-lang3:${commons_lang_version}"
+    compile group: 'javax.servlet', name: 'javax.servlet-api', version:'3.1.0'
+    compile "io.jsonwebtoken:jjwt:${jwt_version}"
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-cache'
+    compile group: 'com.hazelcast', name: 'hazelcast-spring'
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    testCompile group: 'org.openjdk.jmh', name: 'jmh-core', version:'1.19'
+    testCompile group: 'org.openjdk.jmh', name: 'jmh-generator-annprocess', version:'1.19'
+}

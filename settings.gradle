@@ -3,4 +3,5 @@ include 'employee-service'
 include 'commons:commons'
 include 'client-service'
 include 'initial-data-service'
+include ':commons:jwt-filter'
 
